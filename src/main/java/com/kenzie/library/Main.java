@@ -6,7 +6,18 @@ import java.util.NoSuchElementException;
 
 public class Main {
     /*** Declare Statics and Constants Here ***/
-    
+    static int daysTravelled;
+    static int milesTravelled;
+
+    static final int TOTAL_MILES = 1600;
+    static final int MILES_PER_DAY = 20;
+    static final int FOOD_EXCHANGE = 2;
+    static final int MAX_DAYS = 100;
+    static final int WAGON_SIZE = 8;
+    static final int HUNT_DAYS = 4;
+    static final int NUM_TRAVELERS = 4;
+    static final int NUM_HUNTERS = 2;
+    static final int NUM_DOCTORS = 2;
 
     /*** DO NOT CHANGE THE CODE BELOW THIS LINE ***/
     public static void main (String[] args) {
