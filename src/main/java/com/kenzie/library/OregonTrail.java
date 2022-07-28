@@ -82,6 +82,7 @@ public class OregonTrail {
                 if (person instanceof Hunter) {
                     // Cast to Hunter in order to call specific version of hunt
                     hunterHunt.invoke((Hunter)person);
+//                    person.hunt();
                 } else {
                     travelerHunt.invoke(person);
                 }
@@ -134,12 +135,14 @@ public class OregonTrail {
         }
     }
 
-    public static void displayStatus (Wagon wagon, int daysTravelled, int milesTravelled) throws Exception {
+    public static void displayStatus (Wagon wagon, int daysTravelled,String wildAnimalCaught, int milesTravelled) throws Exception {
         @SuppressWarnings("unchecked")
         Method shouldQuarantine = Wagon.class.getMethod("shouldQuarantine");
 
+
         System.out.println("*************************************");
         System.out.println("Days travelled:"+ daysTravelled);
+        System.out.println("Animal caught:" + wildAnimalCaught);
         System.out.println("Miles travelled:"+ milesTravelled);
         System.out.println("Quarantined?:" + ((boolean)shouldQuarantine.invoke(wagon)) );
         System.out.println("Remaining miles to Oregon:" + ((int)OregonTrail.getStaticFieldValue("TOTAL_MILES") - milesTravelled));

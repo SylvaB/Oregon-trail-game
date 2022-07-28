@@ -1,5 +1,7 @@
 package com.kenzie.library;
 
+import java.util.Random;
+
 public class Traveler {
 //define properties
 protected String name;
@@ -77,11 +79,14 @@ public Doctor(String name){
 }
 
 class Hunter extends Traveler {
-//define constructors
+    int foodHunted;
+    //WildlifeType tempAnimal = WildlifeType.getRandomAnimal();
+    //define constructors
     public Hunter(){
         //hunter starts with 2 food
         super();
         this.food = 2;
+        this.foodHunted = 0;
     }
     public Hunter(String name){
         super(name);
@@ -91,8 +96,8 @@ class Hunter extends Traveler {
 //define methods
 public void hunt() {
     //increase hunter food by 5
-    this.food +=5;
-}
+   this.food +=5;
+   }
     @Override
     public void eat() {
         if(this.food >=2) {

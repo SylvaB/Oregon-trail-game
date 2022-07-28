@@ -8,6 +8,7 @@ public class Main {
     /*** Declare Statics and Constants Here ***/
     static int daysTravelled;
     static int milesTravelled;
+    static String wildAnimalCaught;
 
     static final int TOTAL_MILES = 1600;
     static final int MILES_PER_DAY = 20;
@@ -15,8 +16,8 @@ public class Main {
     static final int MAX_DAYS = 100;
     static final int WAGON_SIZE = 8;
     static final int HUNT_DAYS = 4;
-    static final int NUM_TRAVELERS = 4;
-    static final int NUM_HUNTERS = 2;
+    static final int NUM_TRAVELERS = 1;
+    static final int NUM_HUNTERS = 5;
     static final int NUM_DOCTORS = 2;
 
     /*** DO NOT CHANGE THE CODE BELOW THIS LINE ***/
@@ -145,7 +146,7 @@ public class Main {
     //Oregon trail game engine with runtime method and variable invocation
     public static void OregonTrailPartTwo()  {
         try {
-            //load all static and constant variables if they exist. Otherise throw exception
+            //load all static and constant variables if they exist. Otherwise, throw exception
             @SuppressWarnings("unchecked")
             int wagon_size = (int) OregonTrail.getStaticFieldValue("WAGON_SIZE");
             @SuppressWarnings("unchecked")
@@ -178,18 +179,19 @@ public class Main {
 
             //Set variables in preparation to start game
             days_travelled = 0;
+            wildAnimalCaught = "";
             miles_travelled = 0;
             boolean huntFlag = false;
 
-            OregonTrail.loadWagon(wagon,num_travelers,num_doctors,num_hunters);
+            OregonTrail.loadWagon(wagon,num_travelers,num_hunters,num_doctors);
 
             // Display starting state
-            OregonTrail.displayStatus(wagon, days_travelled, miles_travelled);
+            OregonTrail.displayStatus(wagon, days_travelled, wildAnimalCaught, miles_travelled);
 
             // preparing eat method in Hunter and Traveler for runtime invocation
             @SuppressWarnings("unchecked")
             Method getPassengers = Wagon.class.getMethod("getPassengers");
-            //get the passngerArray
+            //get the passengerArray
             Traveler[] passengerArray = (Traveler[]) getPassengers.invoke(wagon);
 
             for (int i = 0; i < max_days; i++) {
@@ -235,7 +237,7 @@ public class Main {
                 days_travelled = days_travelled + 1;
 
                 // Display daily status
-                OregonTrail.displayStatus(wagon, days_travelled, miles_travelled);
+                OregonTrail.displayStatus(wagon, days_travelled,wildAnimalCaught, miles_travelled);
             }
 
             //Check after MAX_DAYS loop if the wagon made it to Oregon
