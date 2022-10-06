@@ -45,12 +45,13 @@ public enum WildlifeType {
     private static final WildlifeType[] animals = values();
     private static final int size = animals.length;
     private static final Random random = new Random();
-    private WildlifeType tempAnimal = WildlifeType.getRandomAnimal();
+    //private WildlifeType tempAnimal = WildlifeType.getRandomAnimal();
 
     public static WildlifeType getRandomAnimal() {
 
         return animals[random.nextInt(size)];
     }
+}
 //    public static void huntAnimals(WildlifeType[] animalsCaught, int animalPoints){
 //        WildlifeType[] animalsCaught = new WildlifeType[size];
 //        WildlifeType animal1 = WildlifeType.getRandomAnimal();
@@ -71,13 +72,13 @@ public enum WildlifeType {
 //
 
 
-    public static void main(String[] args) {
-
-        WildlifeType tempAnimal = WildlifeType.getRandomAnimal();
-        System.out.println(tempAnimal.getAnimalName());
-        System.out.println(tempAnimal.getAnimalValue());
-    }
-}
+//    public static void main(String[] args) {
+//
+//        WildlifeType tempAnimal = WildlifeType.getRandomAnimal();
+//        System.out.println(tempAnimal.getAnimalName());
+//        System.out.println(tempAnimal.getAnimalValue());
+//    }
+//}
 
 
 

@@ -135,10 +135,10 @@ public class OregonTrail {
         }
     }
 
-    public static void displayStatus (Wagon wagon, int daysTravelled,String wildAnimalCaught, int milesTravelled) throws Exception {
+    public static void displayStatus (Wagon wagon, int daysTravelled,WildlifeType wildAnimalCaught, int milesTravelled) throws Exception {
         @SuppressWarnings("unchecked")
         Method shouldQuarantine = Wagon.class.getMethod("shouldQuarantine");
-
+       wildAnimalCaught = WildlifeType.getRandomAnimal();
 
         System.out.println("*************************************");
         System.out.println("Days travelled:"+ daysTravelled);

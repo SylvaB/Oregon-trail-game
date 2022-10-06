@@ -8,7 +8,7 @@ public class Main {
     /*** Declare Statics and Constants Here ***/
     static int daysTravelled;
     static int milesTravelled;
-    static String wildAnimalCaught;
+    static WildlifeType wildAnimalCaught;
 
     static final int TOTAL_MILES = 1600;
     static final int MILES_PER_DAY = 20;
@@ -179,7 +179,7 @@ public class Main {
 
             //Set variables in preparation to start game
             days_travelled = 0;
-            wildAnimalCaught = "";
+
             miles_travelled = 0;
             boolean huntFlag = false;
 
